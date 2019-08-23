@@ -32,3 +32,9 @@ stages:
       inputs:
         containerRegistry: 'Trace'
         command: 'login'
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Trace'
+        repository: 'gokul1247 / devops_sample'
+        command: 'push'
