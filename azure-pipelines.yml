@@ -12,7 +12,7 @@ resources:
 
 variables:
   imageName: 'pipelines-javascript-docker'
-  tag: '$(Build.BuildId)'
+  tag: 'devops_sample_check'
 
 stages:
 - stage: Build
@@ -42,8 +42,7 @@ stages:
           
           echo Hello world
           docker images
-          docker tag ***/devops_sample devops_sample
-          docker images
+          
 
     - task: ECRPushImage@1
       inputs:
