@@ -34,7 +34,7 @@ stages:
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: 'latest'
-        arguments: '-t dem'
+        arguments: '-t demo'
 
     - task: CmdLine@2
       inputs:
@@ -50,7 +50,7 @@ stages:
         awsCredentials: 'AWS'
         regionName: 'us-east-1'
         imageSource: 'imagename'
-        sourceImageName: 'dem'
+        sourceImageName: 'demo'
         repositoryName: 'devopstraceability'
         autoCreateRepository: true
     
