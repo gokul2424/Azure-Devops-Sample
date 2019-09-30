@@ -38,6 +38,6 @@ stages:
         awsCredentials: 'AWS'
         regionName: 'us-east-1'
         imageSource: 'imagename'
-        sourceImageName: 'devops_sample'
+        sourceImageName: 'devops_sample:latest'
         repositoryName: 'devopstraceability'
         autoCreateRepository: true
