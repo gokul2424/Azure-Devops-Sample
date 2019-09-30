@@ -42,7 +42,8 @@ stages:
           
           echo Hello world
           docker images
-
+          docker tag ***/devops_sample devops_sample
+          docker images
 
     - task: ECRPushImage@1
       inputs:
