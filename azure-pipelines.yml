@@ -31,8 +31,11 @@ stages:
       inputs:
         containerRegistry: 'Trace'
         repository: 'gokul1247/devops_sample'
-        command: 'buildAndPush'
+        command: 'build'
         Dockerfile: '**/Dockerfile'
+        buildContext: 
+
+
     - task: CmdLine@2
       inputs:
         script: |
@@ -45,6 +48,7 @@ stages:
         awsCredentials: 'AWS'
         regionName: 'us-east-1'
         imageSource: 'imagename'
-        sourceImageName: '***/devops_sample'
+        sourceImageName: 'jekyll/builder'
         repositoryName: 'devopstraceability'
         autoCreateRepository: true
+    
