@@ -33,7 +33,7 @@ stages:
         repository: 'gokul1247/devops_sample'
         command: 'build'
         Dockerfile: '**/Dockerfile'
-
+        tags: 'naem'
 
     - task: CmdLine@2
       inputs:
@@ -42,6 +42,8 @@ stages:
           
           echo Hello world
           docker images
+
+
     - task: ECRPushImage@1
       inputs:
         awsCredentials: 'AWS'
