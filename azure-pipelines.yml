@@ -11,6 +11,7 @@ resources:
 - repo: self
 
 variables:
+  imageName: 'pipelines-javascript-docker'
   tag: '$(Build.BuildId)'
 
 stages:
@@ -35,6 +36,8 @@ stages:
     - task: ECRPushImage@1
       inputs:
         awsCredentials: 'AWS'
-        regionName: 'us-west-2'
-        imageSource: 'imageid'
-        repositoryName: 'devopsdemotraceability'
+        regionName: 'us-east-1'
+        imageSource: 'imagename'
+        sourceImageName: 'pipelines-javascript-docker'
+        repositoryName: 'devopstraceability'
+        autoCreateRepository: true
