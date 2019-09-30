@@ -33,7 +33,7 @@ stages:
         repository: 'gokul1247/devops_sample'
         command: 'build'
         Dockerfile: '**/Dockerfile'
-        tags: 'naem'
+        tags: 'latest'
 
     - task: CmdLine@2
       inputs:
@@ -49,7 +49,7 @@ stages:
         awsCredentials: 'AWS'
         regionName: 'us-east-1'
         imageSource: 'imagename'
-        sourceImageName: 'jekyll/builder'
+        sourceImageName: 'devops_sample'
         repositoryName: 'devopstraceability'
         autoCreateRepository: true
     
