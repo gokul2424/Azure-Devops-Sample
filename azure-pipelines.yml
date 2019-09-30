@@ -33,10 +33,3 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
 
-    - task: ECRPushImage@1
-      inputs:
-        awsCredentials: 'AWS'
-        regionName: 'us-west-2'
-        imageSource: 'imageid'
-        sourceImageId: 'devops_sample'
-        repositoryName: 'devopsdemotraceability'
