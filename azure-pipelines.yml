@@ -1,5 +1,6 @@
 # Docker
 
+
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -31,3 +32,11 @@ stages:
         repository: 'gokul1247/devops_sample'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+
+    - task: ECRPushImage@1
+      inputs:
+        awsCredentials: 'AWS'
+        regionName: 'us-west-2'
+        imageSource: 'imageid'
+        sourceImageId: 'devops_sample'
+        repositoryName: 'devopsdemotraceability'
