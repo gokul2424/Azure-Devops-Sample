@@ -33,11 +33,18 @@ stages:
         repository: 'gokul1247/devops_sample'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo Write your commands here
+          
+          echo Hello world
+          docker images
     - task: ECRPushImage@1
       inputs:
         awsCredentials: 'AWS'
         regionName: 'us-east-1'
         imageSource: 'imagename'
-        sourceImageName: 'devops_sample:latest'
+        sourceImageName: 'devops_sample'
         repositoryName: 'devopstraceability'
         autoCreateRepository: true
